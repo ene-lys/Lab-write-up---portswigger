@@ -1,0 +1,33 @@
+1. What
+
+Human --> check stock button --> request POST --> http://stock.shop.net:8080, productID=1 --> response --> application --> human
+
+Human --> buy botton --> request (https://service.net/buy?, productId=1) --> 3rd party system --> response (purchased) --> application --> Human
+
+changeable:
+
+- https://service.net/buy?, productId=1
+
+- http://stock.shop.net:8080, productID=1
+
+SSRF: app fetching a remote resource without valid the user-supplied URL
+
+types:
+
+- Regular (in band)
+
+- Blind (out of band)
+
+2. Exploit
+
+In band
+
+- stockApi=...
+
+- different encoding scheme
+
+- own server redirect to internal ip address
+
+Out of band
+
+trigger http request to external system

@@ -1,7 +1,9 @@
 1. What?
 
 Authentication: 
+
     - identifies the users
+
     - Confirm that who they say they are
 
     HTML form-based authentication, MF, 
@@ -30,4 +32,19 @@ Authentication vulnerabilities:
 
 3. How to find and exploit 
 
-- 
+- Weak pass: register several accounts with different kinds of weak pass --> rules
+
+- Improper restriction of authentication attempts: 
+
+submit several bad logins -> (not lockout message) log correct -> v no lockout
+
+Brute force
+
+Locked out --> monitor request, responses
+
+- Vunerable transmission of credentials: 
+
+log in
+
+Find credentials in URL query, cookie,...
+	

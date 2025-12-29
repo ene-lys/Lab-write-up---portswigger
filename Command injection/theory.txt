@@ -1,0 +1,35 @@
+1 What?
+
+Attacker execute commands on host OS via vulnerable application
+
+Human --> (ping IP addr: 127.0.0.1) --> web app (vul) --> ICMP addr --> web server
+=> back
+
+Attacker --> (cat passwd) --> web app (ping + cat) --> web server 
+=> back
+
+types:
+
+- In-band: receive response in the application
+
+- Blind: not return output in response
+
+
+Impact:
+
+- C: View sensitive information
+
+- I: alter content in app
+
+- A: delete content in app
+
+
+2. How to find:
+
+- map all instances
+
+- Fuzz the application: &,&&,|,||,;,\n,...
+
+- In-band --> analyse response
+
+- Blind --> ??? - time delay: sleep(10), ping
