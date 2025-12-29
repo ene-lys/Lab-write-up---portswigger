@@ -1,0 +1,11 @@
+Lab #7: User ID controlled by request parameter
+
+End goal:
+
+Analysis:
+
+API key: 2q5BdFmK6roGhdijOFyC5jFVgBWpEGtu
+
+id=wiener --> id=carlos
+
+carlos API: r4y5zPzN4f5GK7PJoyATxxTwnyR70QGP

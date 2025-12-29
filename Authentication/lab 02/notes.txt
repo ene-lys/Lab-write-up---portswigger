@@ -1,0 +1,6 @@
+Lab #2 - 2FA simple bypass
+
+End goal: Bypass the 2FA verification and access Carrlos's account
+
+Your credentials: wiener:peter
+Victim's credentials carlos:montoya

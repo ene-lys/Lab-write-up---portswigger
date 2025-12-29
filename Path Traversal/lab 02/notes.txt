@@ -1,0 +1,7 @@
+Lab #2: File path traversal, traversal sequences blocked with absolute path bypass
+
+End goal: Retieve the content of the /etc/passwd file
+
+Analysis:
+
+filename = /etc/passwd

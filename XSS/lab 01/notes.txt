@@ -1,0 +1,13 @@
+Lab #1: Reflected XSS into HTML context with nothing encoded
+
+End goal: perform cross site scripting attack that calls the alert function
+
+Analysis:
+
+Check if the web is vulnerable to XSS
+
+GET /?search=<script>alert(1)</script>
+
+<script> ... </script>: thẻ HTML dùng để chạy JavaScript trong trình duyệt
+
+alert(1): lệnh JavaScript hiển thị hộp thoại (popup) với nội dung 1

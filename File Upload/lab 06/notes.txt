@@ -1,0 +1,16 @@
+Lab #6: Remote code execution via polyglot web shell upload
+
+End goal: End goal: Find the content in /home/carlos/secret
+
+Analysis:
+
+1. Get images path traversal
+
+GET /files/avatars/images.jpeg
+
+2. Upload php file
+
+--> Error: file is not a valid image Sorry, there was an error uploading your file.
+
+3. Use exif tool to create jpg file contain php file
+

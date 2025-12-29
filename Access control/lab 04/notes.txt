@@ -1,0 +1,13 @@
+Lab #4: User role can be modified in user profile
+
+End goal: accessing the admin panel and using it to delete the user carlos
+
+Analysis:
+
+1. Sign in as wiener:parameter
+
+2. Submit email panel --> roleid=1
+
+"email":"peter@mail",
+"roleid": 2
+

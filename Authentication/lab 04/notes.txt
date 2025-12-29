@@ -1,0 +1,16 @@
+Lab #4: Username enumeration via subtly different responses
+
+End goal: 
+- Enumerate valid Username
+- Brute force password
+
+
+Analysis:
+
+1. Enumerate username using Intruder
+
+amarillo
+
+2. Brute force the password
+
+sunshine ==> HTTP 302

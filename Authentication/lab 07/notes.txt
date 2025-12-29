@@ -1,0 +1,18 @@
+Lab #7: Username enumeration via account lock
+
+End goal:
+- Enumerate valid Username
+- Bruteforce user password
+- Access account page
+
+Analysis:
+
+1. Find valid username
+
+Brute force username with empty password
+username=$test$&password=$$
+
+$test$: namelist
+
+$$: null payload
+    generate 5 payloads

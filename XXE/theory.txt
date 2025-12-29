@@ -1,0 +1,28 @@
+1. XML - ngông ngữ đánh dấu để lưu trữ và truyền dữ liệu có cấu trúc
+
+Dùng thẻ < >
+Không dùng để hiển thị mà mô tả dữ liệu
+
+VD: 
+<user>
+    <username>admin</username>
+    <password>123456</password>
+</user>
+
+<user> - đối tượng
+<username> <password>: các trường dữ liệu
+
+2. Entity trong XML
+<!DOCTYPE test [
+  <!ENTITY name "Lys">
+]>
+<test>&name;</test>
+
+Entity có thể đọc file hệ thống hoặt url nội bộ
+
+external XML - XML custom có giá trị sẵn load từ ngoài DTD.
+
+external entity - cho phép entity được định nghĩa dự vào nội dung của file path hoặc url
+
+3. XXE
+Lỗ hổng bảo mật, server parse XML không an toàn, cho phép đọc entity bên ngoài

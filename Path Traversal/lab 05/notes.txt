@@ -1,0 +1,7 @@
+Lab #5: File path traversal, validation of start of path
+
+End goal: Retrieve the contents of the /etc/passwd
+
+Analysis:
+
+filename = lename=/var/www/images/../../../etc/passwd

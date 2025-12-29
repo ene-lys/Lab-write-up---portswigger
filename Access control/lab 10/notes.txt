@@ -1,0 +1,9 @@
+Lab #10: User ID controlled by request parameter with password disclosure
+
+End goal:retrieve the administrator's password, then use it to delete the user carlos
+
+Analysis:
+
+id=wiener --> id=administrator
+
+pass: 85bw77eqmvcftp9z9ixx

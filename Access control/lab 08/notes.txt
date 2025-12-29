@@ -1,0 +1,11 @@
+Lab #8: User ID controlled by request parameter, with unpredictable user IDs
+
+end goal: find the GUID for carlos, then submit his API key as the solution.
+
+Analysis:
+
+blog post by carlos
+
+carlos id = f7155cc8-1e46-4b5f-9a12-9f4f35c148f3
+
+carlos api key: 6KNWXZ0uiGx6DfO1gtougawS02WNmCKB

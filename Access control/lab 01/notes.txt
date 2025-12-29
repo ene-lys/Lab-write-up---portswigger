@@ -1,0 +1,12 @@
+Lab #1: Unprotected admin functionality
+
+
+End goal: delete user carlos
+
+Analysis:
+
+the admin URL saved in here: security-academy.net/administrator-panel/robots.txt
+
+security-academy.net/administrator-panel/delete?username=carlos
+
+admin-panel, administrator-panel

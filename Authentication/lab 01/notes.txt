@@ -1,0 +1,19 @@
+Lab #1 - Username enumeration via different responses
+
+End goal: Enumerate a valid username and password to access the application
+
+Analysis:
+
+1. Login with any name and password
+
+2. Find the username
+
+username=$test$&password=test
+
+username = applications
+
+3. Find the password
+
+username=applications&password=test
+
+password = aaaaaa

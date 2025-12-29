@@ -1,0 +1,5 @@
+Lab #9: User ID controlled by request parameter with data leakage in redirect
+
+id=wiener --> id=carlos
+
+6pY0LjFZcXNPbcp98gPej0IFnHMUFQQ1

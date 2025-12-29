@@ -1,0 +1,9 @@
+Lab #11: Insecure direct object references
+
+Analysis:
+
+download-transcript
+
+GET /download-transcript/3.txt --> GET /download-transcript/1.txt
+
+==> h9ec6i6thlp9bejz21at

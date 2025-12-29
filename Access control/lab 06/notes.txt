@@ -1,0 +1,13 @@
+Lab #6: Method-based access control can be circumvented
+
+End goal:
+-  log in using the credentials wiener:peter
+- exploit the flawed access controls to promote yourself to become an administrator.
+
+Analysis:
+
+Cookie: session=iy6tBOwEt4GOIfu0mnPo5hDFFeWsTtSg
+--> okie: session=N1ysSYdOKqthOHRJCUHqrWSJi1nEs4Qz
+
+Change request Method
+username=wiener

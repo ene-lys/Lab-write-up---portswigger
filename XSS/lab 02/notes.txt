@@ -1,0 +1,9 @@
+Lab #2: Stored XSS into HTML context with nothing encoded
+
+End goal: ubmit a comment that calls the alert function when the blog post is viewed.
+
+Analysis:
+ 
+<script>alert(1)</script>
+
+read html

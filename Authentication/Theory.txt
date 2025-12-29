@@ -1,0 +1,33 @@
+1. What?
+
+Authentication: 
+    - identifies the users
+    - Confirm that who they say they are
+
+    HTML form-based authentication, MF, 
+
+Authentication vulnerabilities: 
+
+- Weak password 
+
+- Improper restriction of authentication attempts
+
+- Verbose error message
+
+- Vunerable transmission of credentials: HTTP vs HTTPS   
+
+- Insecure forgot password functionality
+
+- Defects in multistage login mechanism
+
+- Insecure storage of credentials
+
+2. Impact of authentication vulnerabilities
+
+- Confidentiality - access to users' data
+- Ingegrity - access to update other users' data
+- Avaibility - access to delete users and their data
+
+3. How to find and exploit 
+
+- 

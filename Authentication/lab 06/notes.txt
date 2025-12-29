@@ -1,0 +1,34 @@
+Lab #6 - Broken brute-force protection, IP block
+
+End goal:
+- Brute force carlos password
+- Log in as carlos
+
+Analysis:
+
+1. Wrong password
+
+--> Incorrect password
+
+--> You have made too many incorrect login attempts. Please try again in 1 minute(s)
+
+carlos
+carlos
+wiener
+carlos
+carlos
+--> Can still input after 1 (in 3) attempts legit
+
+
+123456
+password
+peter
+12345678
+query
+
+2. Find password by intruder 
+
+Pinchfork attack
+
+carlos
+1234567

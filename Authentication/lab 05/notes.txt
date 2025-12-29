@@ -1,0 +1,55 @@
+Lab #5 - Username enumeration via response timing
+
+End goal: 
+- Enumarate valid username
+- Brute force password
+
+Your credentials: wiener:peter
+
+Analysis:
+
+1. Login as my credential, experiment with different usernames and passwords
+-> IP blocked when too many invalid login
+
+2. Identify X-Forwarded is supported
+
+X-Forwarded-For: 1
+=> 3 times = error
+
+X-Forwarded-For: 2
+
+==> Đổi danh tính IP để được nhập tiếp sau mỗi 3 lần nhập sai
+
+3. Check runtime difference 
+
+- True username
+username=weiner&password=peter
+--> ... sec
+
+username=weiner&password=peterpeterpeter
+--> ... sec
+
+username=weiner&password=peterpeterpeterpeterpeterpeter
+--> 600 sec
+
+- Wrong username
+username=randomName&password=peterpeterpeterpeterpeterpeter
+--> 200 sec
+
+==> Đúng username, sai pass (pass dài) --> Thời gian chạy lâu hơn
+==> Sai username --> Thời gian chạy ngắn
+
+4. Determine the username
+
+- Find username, increase X-Forwarded-For parallel as username
+X-Forwarded-For: $2$
+
+username=$adkit$&password=test
+
+- Find password, increase X-Forwarded-For parallel as username
+X-Forwarded-For: $2$
+
+username=adkit&password=$test$
+
+username = adkit
+password = nicole

@@ -1,0 +1,12 @@
+Lab #2: Unprotected admin functionality with unpredictable URL
+
+End goal: accessing the admin panel, and using it to delete the user carlos
+
+Analysis
+
+1. View page source
+-->admin-m7emx6
+
+2. Delete carlos
+
+.../admin-m7emx6/delete?username=carlos

